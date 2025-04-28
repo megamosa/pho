@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Customer account creation plugin -->
+    <type name="Magento\Customer\Api\AccountManagementInterface">
+        <plugin name="magoarab_phonemail_account_management" type="MagoArab\PhoneMail\Plugin\Customer\AccountManagement" sortOrder="10" />
+    </type>
+    
+    <!-- Checkout layout processor plugin -->
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="magoarab_phonemail_checkout_layout_processor" type="MagoArab\PhoneMail\Plugin\Checkout\LayoutProcessor" sortOrder="10" />
+    </type>
+    
+    <!-- WhatsApp service preference -->
+    <preference for="MagoArab\PhoneMail\Api\WhatsAppServiceInterface" type="MagoArab\PhoneMail\Model\WhatsAppService" />
+</config>
